@@ -5,13 +5,13 @@ import discord
 from discord.ext import commands
 
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 responses = {}
-with open('responses.txt', 'r') as f:
+with open("responses.txt", "r") as f:
     for line in f:
         trigger, response = line.strip().split()
         responses[trigger] = response
@@ -19,7 +19,7 @@ with open('responses.txt', 'r') as f:
 
 @bot.event
 async def on_ready():
-    print(f'{bot.user.name} has connected to Discord!')
+    print(f"{bot.user.name} has connected to Discord!")
 
 
 @bot.command()
