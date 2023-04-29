@@ -1,0 +1,2 @@
+!foo https://media.discordapp.net/attachments/687759391692161060/708660115926024252/foo.jpg?width=363&height=532
+!sexoman https://cdn.discordapp.com/attachments/687083792787177487/912819590856310844/sexoman.jpg
