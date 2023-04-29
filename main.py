@@ -4,7 +4,6 @@ import os
 import discord
 from discord.ext import commands
 
-
 intents = discord.Intents.all()
 intents.members = True
 
@@ -22,11 +21,11 @@ async def on_ready():
     print(f"{bot.user.name} has connected to Discord!")
 
 
-@bot.command()
-async def respond(ctx):
-    response = responses.get(ctx.message.content)
+@bot.event
+async def on_message(message):
+    response = responses.get(message.content)
     if response:
-        await ctx.send(response)
+        await message.channel.send(response)
 
 
 bot.run(os.environ["DISCORD_TOKEN"])
